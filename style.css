@@ -1,0 +1,641 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Marck+Script&family=Montserrat&family=Nanum+Pen+Script&family=Pacifico&family=Poppins:wght@200&family=Qwitcher+Grypen:wght@700&family=Roboto:wght@500&family=Staatliches&display=swap');
+
+html {
+	scroll-behavior: smooth;
+}
+*{
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	font-family: 'poppins';
+	box-sizing: border-box;
+	/* border: 1px solid red; */
+	
+}
+body {
+	background: linear-gradient(180deg, rgba(255,255,255,0) 15%, rgba(255,255,255) 100%), url(assets/image/LogoBG.jpg);
+	background-size: cover ;
+	overflow: scroll;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+/* HEADER */
+.toggle-menu {
+    top : 0;
+    width: 30px;
+    height: 30px;
+    margin: 30px;
+    position: fixed;
+    z-index: 1000;
+    cursor: pointer;
+}
+.bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 5px;
+    background-color: rgb(19, 19, 19);
+    margin: 4px 0;
+    transition: 0.4s;
+    z-index: 10;
+}
+
+/* Rotate 1st, fade 2nd, rotate 3rd */
+.change .bar1 { 
+	-webkit-transform: rotate(-45deg) translate(-8px, 5px) ;
+	transform: rotate(-45deg) translate(-8px, 4px) ;
+  }
+  .change .bar2 {
+	opacity: 0;
+  }
+  .change .bar3 { 
+	-webkit-transform: rotate(45deg) translate(-8px,-8px) ;
+	transform: rotate(45deg) translate(-8px, -6px) ;
+  }
+.side-bar {
+	z-index: 1000;
+	position: fixed;
+	top: 70px;
+	left: 20px;
+	width: 130px;
+	height: 200px;
+	/* z-index 10; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+	visibility: hidden;
+	/* Background-color: rgb(175, 199, 169) */
+	background-color: #afc7a9; 
+}
+.side-bar ul li {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	line-height: 30px;
+	/* di liat dulu, list-style-type: georgian; */
+	list-style-type: none;
+}
+.side-bar ul li a {
+	display: block;
+	list-style-type: none;
+	font-size: 11px;
+	font-family: 'Roboto', sans-serif;
+	color: black;
+}
+.side-bar ul li a:hover {
+	color: rgb(253, 173, 0);
+}
+
+/* INDEX OR HOME*/
+#home {
+	display: flex;
+	width: 100%;
+	height: 130vh;
+	padding-bottom: 30vh;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: space-around;
+}
+
+.landing {
+	display: flex;
+	width: 100%;
+	height: 85vh;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.landing p, .landing p b {
+	display: inline-block;
+	padding: 10px;
+	width: 600px;
+	justify-content: center;
+	font-size: 15px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#landing-effect {
+	font-family: 'Marck Script', cursive;
+	font-weight: bolder;
+	z-index: 1;
+}
+
+
+.landing h1 {
+	font-size: 65px;
+	padding: 20px;
+}
+
+.landing h2 {
+	font-size: 35px;
+	font-family: 'Nanum Pen Script', cursive;
+	padding: 20 auto;
+
+}
+
+.landing #slogan {
+	font-size: 35px;
+	font-family: 'Staatliches', cursive;
+	letter-spacing: 4px;
+	font-weight: 800;
+	padding: 0px 20px;
+	color: #ab8820;
+	/* uppercase tidak berlaku untuk font 'staatliches' */
+	text-shadow: 2px 2px 2px rgb(0, 0, 0);
+	border-radius: 2em;
+}
+
+/* ABOUT ME */
+#about {
+	display: flex;
+	width: 100%;
+	height: 130vh;
+	padding-bottom: 30vh;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center
+}
+
+.profile {
+	width: 95vh;
+	height: 95vh;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 50%;
+}
+.profile h1 {
+	font-family: 'Marck Script', cursive;
+	font-weight: bolder;
+	padding: 0px 0px 0px 0px;
+	font-size: 60px;
+	z-index: 10;
+	margin-bottom: -100;
+	position: sticky;
+}
+.profile img {
+	width: 400px;
+	border-radius: 50%;
+	margin-bottom: 13px;
+	z-index: 0;
+	box-shadow: 6px 4px 10px black;
+}
+.profile h3 {
+	padding-top: 10px;
+	font-family: 'Covered By Your Grace', cursive;
+	font-size: 25px;
+}
+.profile h6 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+}
+.profile p {
+	display: inline-block;
+	padding: 5px 0px 10px 0px;
+	width: 540px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12px;
+	text-align: justify;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(8deg);
+	}
+	to {
+		transform: rotate(30deg);
+	}
+}
+.profile img:hover {
+	animation: rotate 2s;
+	animation-fill-mode: forwards;
+	animation-direction: alternate;
+}
+.profile a, button {
+	padding: 7px;
+	margin: 10px;
+	border-radius: 2em;
+	background: transparent;
+	font-family: 'Covered By Your Grace', cursive;
+	font-family: 'Staatliches', cursive;
+
+	letter-spacing: 5px;
+	font-size: 15px;
+	font-weight: 900;
+	text-shadow: rgb(209, 201, 201) 2px 2px 2px;
+    color: #858fff;
+}
+
+/* CONTACT */
+#contact {
+	margin-top: 100px;
+}
+.contact {
+	display: flex;
+	width: 100%;
+	height: 90vh;
+	box-sizing: border-box;
+	text-align: center;
+	background-image: url(assets/image/sky.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.getintouch {
+	display: flex;
+	width: 50%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-image: url(assets/image/Langitbiru.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.getintouch h1 {
+	font-family: 'Marck Script', cursive;
+	font-weight: bolder;
+	font-size: 60px;
+	position: sticky;
+}
+
+.getintouch p {
+	width: 250px;
+	padding: 30px auto;
+	margin: 30px auto;
+	font-size: 13px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.socialmedia {
+	display: flex;
+	padding-top: 15px;
+	list-style: none;
+	flex-direction: row;
+	justify-content: center;
+	border: 5px auto;
+}
+.socialmedia img {
+	display: inline-block;
+	width: 40px;
+	margin: 5px;
+	border-radius: 50%;
+	margin-bottom: 13px;
+	z-index: 0;
+	box-shadow: 3px 2px 4px black;
+}
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(30deg);
+	}
+}
+.socialmedia img:hover {
+	animation: rotate 2s;
+	animation-fill-mode: forwards;
+	animation-direction: alternate;
+}
+
+.contact-form {
+	display: flex;
+	width: 50%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.contact-form h1 {
+	font-family: 'Marck Script', cursive;
+	font-weight: bolder;
+	font-size: 40px;
+	position: sticky;
+}
+.contact-form form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.contact-form input, textarea {
+	width: 300px;
+	height: 40px;
+	margin-bottom: 15px;
+	font-size: 12px;
+	color: black;
+	background-color: #f1dfdbef;
+	border-radius: 12px;
+	border: none;
+	box-shadow: 2px 2px 2px black;
+}
+.contact-form label {
+	font-family: 'Montserrat', sans-serif;
+	height: 20px;
+	font-weight: bold;
+	font-size: 11px;
+}
+.contact-form textarea {
+	width: 300px;
+	height: 100px;
+	margin-bottom: 15px;
+	background-color: rgba(255, 255, 255, 0.646);
+}
+.contact-form #submit {
+	width: 80px;
+	float: right;
+	color: white;
+	background-color: black;
+	border: none;
+	border-radius: 2em;
+}
+.contact-form #submit:hover {
+	color: rgb(0, 0, 0);
+}
+
+/* FOOTER */
+.slogan {
+	display: flex;
+	width: 100%;
+	padding: 6px 0px;
+	background-color: #d7eaf7;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-size: 20px;
+	font-family: 'Covered By Your Grace', cursive;
+
+}
+.copyright {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: center;
+	padding: 5px 0px;
+	font-size: 10px;
+	text-align: center;
+	font-style: italic;
+}
+
+
+@media screen and (min-width: 375px) and (max-width: 1000px){
+
+	.landing h1{ 
+		font-size: 45px !important; 
+	}
+	.landing h2{ 
+		font-size: 20px; 
+	}
+	.landing h3{ 
+		font-size: 20px; 
+	}
+	.landing p, .landing p b {
+		width: 300px;
+		font-size: 12px;
+	}
+}
+
+/* ABOUT ME */
+#content {
+	display: flex;
+	width: 100%;
+	height: 130vh;
+	padding-bottom: 30vh;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center
+}
+
+.profile {
+	width: 95vh;
+	height: 95vh;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 50%;
+}
+.profile h1 {
+	font-family: 'Marck Script', cursive;
+	font-weight: bolder;
+	padding: 0px 0px 0px 0px;
+	font-size: 60px;
+	z-index: 10;
+	margin-bottom: -100;
+	position: sticky;
+}
+.profile img {
+	width: 400px;
+	border-radius: 50%;
+	margin-bottom: 13px;
+	z-index: 0;
+	box-shadow: 6px 4px 10px black;
+}
+.profile h3 {
+	padding-top: 10px;
+	font-family: 'Covered By Your Grace', cursive;
+	font-size: 25px;
+}
+.profile h6 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+}
+.profile p {
+	display: inline-block;
+	padding: 5px 0px 10px 0px;
+	width: 540px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12px;
+	text-align: justify;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(8deg);
+	}
+	to {
+		transform: rotate(30deg);
+	}
+}
+.profile img:hover {
+	animation: rotate 2s;
+	animation-fill-mode: forwards;
+	animation-direction: alternate;
+}
+.profile a, button {
+	padding: 7px;
+	margin: 10px;
+	border-radius: 2em;
+	background: transparent;
+	font-family: 'Covered By Your Grace', cursive;
+	font-family: 'Staatliches', cursive;
+
+	letter-spacing: 5px;
+	font-size: 15px;
+	font-weight: 900;
+	text-shadow: rgb(209, 201, 201) 2px 2px 2px;
+    color: #858fff;
+}
+
+/* CONTACT */
+.contact {
+	display: flex;
+	width: 100%;
+	height: 90vh;
+	box-sizing: border-box;
+	text-align: center;
+	background-image: url(assets/image/sky.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.getintouch {
+	display: flex;
+	width: 50%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-image: url(assets/image/Langitbiru.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.getintouch h1 {
+	font-family: 'Marck Script', cursive;
+	font-weight: bolder;
+	font-size: 50px;
+	position: sticky;
+}
+
+.getintouch p {
+	width: 250px;
+	padding: 30px auto;
+	margin: 30px auto;
+	font-size: 13px;
+	font-weight: 800;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.socialmedia {
+	display: flex;
+	padding-top: 15px;
+	list-style: none;
+	flex-direction: row;
+	justify-content: center;
+	border: 5px auto;
+}
+.socialmedia img {
+	display: inline-block;
+	width: 40px;
+	margin: 5px;
+	border-radius: 50%;
+	margin-bottom: 13px;
+	z-index: 0;
+	box-shadow: 3px 2px 4px black;
+}
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(30deg);
+	}
+}
+.socialmedia img:hover {
+	animation: rotate 2s;
+	animation-fill-mode: forwards;
+	animation-direction: alternate;
+}
+
+.contact-form {
+	display: flex;
+	width: 50%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.contact-form h1 {
+	font-family: 'Marck Script', cursive;
+	font-weight: bolder;
+	font-size: 60px;
+	position: sticky;
+}
+.contact-form form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.contact-form input, textarea {
+	width: 300px;
+	height: 40px;
+	margin-bottom: 15px;
+	font-size: 12px;
+	color: black;
+	background-color: #f1dfdbef;
+	border-radius: 12px;
+	border: none;
+	box-shadow: 2px 2px 2px black;
+}
+.contact-form label {
+	font-family: 'Montserrat', sans-serif;
+	height: 20px;
+	font-weight: bold;
+	font-size: 11px;
+}
+.contact-form textarea {
+	width: 300px;
+	height: 100px;
+	margin-bottom: 15px;
+	background-color: rgba(255, 255, 255, 0.646);
+}
+.contact-form #submit {
+	width: 80px;
+	float: right;
+	color: white;
+	background-color: black;
+	border: none;
+	border-radius: 2em;
+}
+.contact-form #submit:hover {
+	color: rgb(0, 0, 0);
+}
+
+/* FOOTER */
+footer {
+	display: flex;
+	width: 100%;
+	padding: 20px 0px;
+	background-color: #d7eaf7;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+footer p {
+	font-family: 'Covered By Your Grace', cursive;
+    font-size: 15px
+}
+.copyright {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: center;
+	padding: 5px 0px;
+	font-size: 10px;
+	text-align: center;
+	font-style: italic;
+}
